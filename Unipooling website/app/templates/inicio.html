@@ -1,20 +1,67 @@
 {%load static%}
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIPOOLING</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href='{%static "css/inicio.css" %}'>
-    <div class="topnav" id="myTopnav">
-    <a href="#Inicio" class="active">Home</a>
-    <a href="#Misviajes">Mis viajes</a>
-    <a href="#Horarios">Horarios</a>
-    <a href="#Rutas">Rutas</a>
-    <a href="#Contacto">Contactos</a>
-    </a>
-    <div class="usuario">
-    <a class="fas fa-user" href="{% url 'home' %}"></a>
-    </div>
-    </div>
-    <div class="info">
-        <div class="texto">
-        <p>PUTA</p>
-    </div>
-    </div>
+    <link rel="stylesheet" href='{%static "css/footer.css" %}'>
+    <link rel="stylesheet" href='{%static "css/navbar.css" %}'>
+</head>
+
+<body>
+    <!-- SECCION HEADER -->
+    <header>
+        <!-- NAVBAR -->
+        <div class="topnav" id="myTopnav">
+            <a href="#Inicio" class="active">Home</a>
+            <a href="#Misviajes">Mis viajes</a>
+            <a href="#Horarios">Horarios</a>
+            <a href="#Rutas">Rutas</a>
+            <a href="#Contacto">Contactos</a>
+            </a>
+            <div class="usuario">
+                <a class="fas fa-user" href="{% url 'home' %}"></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- SECCION FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <ul>
+                <h3>General</h3>
+                <ul class="listas">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Mis viajes</a></li>
+                    <li><a href="">Horarios</a></li>
+                    <li><a href="">Rutas</a></li>
+                    <li><a href="">Contactanos</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <h3>Legal</h3>
+                <li><a href="#">Aviso legal</a></li>
+                <li><a href="#">Politica de privacidad</a></li>
+                <li><a href="#">Politica-cookies</a></li>
+            </ul>
+            <ul>
+                <h3>Contacto</h3>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Whatsapp</a></li>
+                <li><a href="#">instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

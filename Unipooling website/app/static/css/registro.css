@@ -7,6 +7,7 @@
     box-sizing: border-box;
     font-family: "Poppins" , sans-serif;
     }
+
     body{
     min-height: 100vh;
     display: flex;
@@ -15,6 +16,7 @@
     background: #32527b ;
     padding: 30px;
     }
+    
     .container{
     position: relative;
     max-width: 850px;

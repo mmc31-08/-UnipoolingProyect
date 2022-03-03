@@ -5,5 +5,5 @@ def home(request):
     return render(request, 'home.html')
 
 
-def inicio(request): 
-    return render(request, 'inicio.html')
+def principal(request): 
+    return render(request, 'principal.html')
