@@ -45,7 +45,9 @@
     </div>
     <div class="signup-form">
         <div class="title">Registro</div>
-    <form action="#">
+    <form method="post" action="#" >
+        {% crsf_token %}
+
         <div class="input-boxes">
             <div class="input-box">
             <i class="fas fa-user"></i>
