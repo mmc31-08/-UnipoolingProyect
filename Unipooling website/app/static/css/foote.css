@@ -1,6 +1,6 @@
 .footer{
     background: #081f3d;
-    padding: 35px 0;
+    padding: 5px;
 }
 
 .footer .container{
@@ -18,7 +18,7 @@
 }
 
 .footer .container ul{
-    margin: 0 auto;
+    margin:auto;
 }
 
 .footer .container ul li{

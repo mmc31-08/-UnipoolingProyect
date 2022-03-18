@@ -9,8 +9,11 @@
     <title>UNIPOOLING</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href='{%static "css/inicio.css" %}'>
-    <link rel="stylesheet" href='{%static "css/footer.css" %}'>
+    <link rel="stylesheet" href='{%static "css/foote.css" %}'>
     <link rel="stylesheet" href='{%static "css/navbar.css" %}'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,11 +31,14 @@
                 <a class="fas fa-user" href="{% url 'home' %}"></a>
             </div>
         </div>
+        
     </header>
 
     <main>
+        
         {% block content %}
         {% endblock %}
+        
     </main>
 
     <!-- SECCION FOOTER -->
