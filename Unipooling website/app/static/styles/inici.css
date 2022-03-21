@@ -53,21 +53,6 @@ html{
     color: #238662;
 }
 
-.info{
-    height: auto;
-    width: auto;
-    margin: 30px 120px 30px 120px;
-    background-color: rgba(255, 255, 255, 0.705);
-    justify-items: center;
-    padding: 5px;
-}
-
-.info p{
-    font-size: 25px;
-    text-align: center;
-    opacity: 100%;
-}
-
 .topnav a {
 float: left;
 display: block;
@@ -92,6 +77,70 @@ color: white;
 display: flex;
 }
 
+form {
+  margin: 0px 300px 0 300px;
+  padding: 20px;
+  font-size: 2rem;
+}
+
+input {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #081f3d;
+  outline: 0;
+  background: rgba(255, 255, 255, 0.466);
+  padding: 20px 0 4px;
+  color: black;
+}
+
+input:focus {
+border-color: #238662;
+color: #2C3238;
+}
+
+button#submit {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background: #7A9D96;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  opacity: .8;
+  transition: .35s linear;
+}
+
+button#submit:hover {
+  opacity: 1;
+}
+
+
+.notification {
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 2rem;
+}
+.success {
+  background: #238662;
+  color: white;
+}
+.error {
+  background: #AB3444;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.info{
+  height: auto;
+  width: auto;
+  margin: 30px 120px 30px 120px;
+  background-color: rgba(255, 255, 255, 0.705);
+  justify-items: center;
+  padding: 5px;
+}
+
 
 .info h1{
   font-size: 62px;
@@ -100,12 +149,12 @@ display: flex;
 }
 
 .info p{
+  font-size: 15px;
+  text-align: center;
   margin: 10px 0 40px;
-  font-size: 14px;
   color: black;
   text-transform: uppercase;
 }
-
 
 .boton{
   display: flex;

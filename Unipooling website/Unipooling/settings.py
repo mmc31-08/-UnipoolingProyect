@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'Unipooling.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Unipooling', 
+        'USER': 'postgres', 
+        'PASSWORD': 'david1601',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
     }
 }
 
@@ -122,6 +126,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL= 'Unipoolingapp/static/images/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'app/static'),)
+
+LOGIN_REDIRECT_URL= 'principal'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

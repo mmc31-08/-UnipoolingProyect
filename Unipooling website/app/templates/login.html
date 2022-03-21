@@ -1,0 +1,16 @@
+{% extends 'inicio.html' %}
+
+{% block content%}
+<div class="info">
+
+<form class="form" method="post" action="">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+    <button type="submit" id="submit">login</button>
+    
+</form>
+</div>
+
+{% endblock %}
