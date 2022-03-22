@@ -1,0 +1,16 @@
+{% extends "inicio.html" %}
+
+{% block content %}
+<div class="info">
+
+    <form class="form" method="post" action="">
+        {% csrf_token %}
+        {{ formr }}
+
+
+        <input type="submit" name="crear" value="Registrar" class="btn btn-primary">
+    </form>
+</div>
+
+
+{% endblock %}

@@ -10,6 +10,12 @@ class User(AbstractUser):
     universidad= models.CharField(max_length=20, null=True)
 
     USERNAME_FIELD= 'email'
-    REQUIRED_FIELDS=['unviersdidad']
+    REQUIRED_FIELDS=['universidad']
 
+
+class Ruta(models.Model):
+    lugarSalida = models.CharField(max_length=200)
+    lugarLlegada = models.CharField(max_length=200)
+    ruta = models.CharField(max_length=200)
+    fechaSalida = models.DateTimeField(auto_now=False)
 #nombre, universidad, correo, contrasena

@@ -26,4 +26,6 @@ urlpatterns = [
     path('register/', appViews.register, name="register"),
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view(template_name='logout.html'), name='logout'),
+    path('rutas/', appViews.rutas, name="rutas"),
+    path('registroRuta/', appViews.registrarRutaView, name="registroRuta"),
 ]
