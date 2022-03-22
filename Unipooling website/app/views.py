@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.contrib import messages
-from .forms import UserRegisterForm
+from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+from django.contrib.auth import authenticate, login, logout
+from .models import User
+from .forms import MyUserCreationForm
 
-# Create your views here.
+
 def home(request):
     return render(request, 'home.html')
 
@@ -12,15 +17,15 @@ def principal(request):
 
 
 def register(request):
+    form = MyUserCreationForm()
     if request.method=='POST':
-        form= UserRegisterForm(request.POST)
+        form = MyUserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            username= form.cleaned_data['username']
-            messages.success(request, f'usuario {username} creado')
+            user= form.save(commit=False)
+            user.username= user.username.lower()
+            user.save()            
             return redirect('principal')
-    else: 
-        form=UserRegisterForm()
+        else: 
+            messages.error(request, 'An error occurred during registration')
     
-    context= { 'form' : form}
-    return render(request,'register.html', context)
+    return render(request,'register.html', { 'form' : form})

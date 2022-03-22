@@ -6,8 +6,16 @@
 <form class="form" method="post" action="">
 
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit">
+    {% for field in form %}
+    <div class="from_group">
+        {{field.label}}
+        {{field}}
+    </div>
+
+    {% endfor %}
+
+
+
     <button type="submit" id="submit">Registrarse</button>
     
 </form>
