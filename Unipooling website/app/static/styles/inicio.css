@@ -68,10 +68,7 @@ background-color: #ddd;
 color: black;
 }
 
-.topnav a.active {
-background-color: #238662;
-color: white;
-}
+
 
 .topnav .icon {
 display: flex;
