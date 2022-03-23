@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
-from matplotlib.style import context
+
 from .models import Ruta, User
 from .forms import RutaForm, MyUserCreationForm
 
