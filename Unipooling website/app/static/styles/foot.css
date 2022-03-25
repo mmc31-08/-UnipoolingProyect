@@ -1,6 +1,10 @@
 .footer{
     background: #081f3d;
     padding: 5px;
+
+    bottom: 0;
+    width: 100%;
+    
 }
 
 .footer .container{
