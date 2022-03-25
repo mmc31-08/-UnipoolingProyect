@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
-
+from django.core.validators import MinLengthValidator
 
 
 class User(AbstractUser):
@@ -18,4 +17,9 @@ class Ruta(models.Model):
     lugarLlegada = models.CharField(max_length=200)
     ruta = models.CharField(max_length=200)
     fechaSalida = models.DateTimeField(auto_now=False)
-#nombre, universidad, correo, contrasena
+
+class Vehiculo(models.Model):
+    placa = models.CharField(max_length=6, validators=[MinLengthValidator(6)],blank=False, null=False)
+    color = models.CharField(max_length=10)
+    modelo = models.CharField(max_length=200)
+

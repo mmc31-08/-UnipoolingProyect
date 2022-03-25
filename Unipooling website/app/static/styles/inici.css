@@ -1,9 +1,19 @@
 /* Add a black background color to the top navigation */
+html{
+  height: 100%;
+}
+
 body {
   overflow: hidden;
   justify-content: center;
   background-color: #0b3c7c;
   margin: 0px;
+overflow: hidden;
+justify-content: center;
+background-color:#0b3c7c;
+margin: 0px;
+padding-bottom: 100px;
+
 }
 
 * {
@@ -15,6 +25,8 @@ body {
   border: none;
   text-transform: capitalize;
   font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100%;
 }
 
 ul {
