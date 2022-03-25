@@ -23,11 +23,12 @@
     <header>
         <!-- NAVBAR -->
         <div class="topnav" id="myTopnav">
-            <a href="#Inicio" class="active">Home</a>
+            <a href="{%  url 'principal'%}" class="active">Home</a>
             <a href="#Misviajes">Mis viajes</a>
-            <a href="#Horarios">Horarios</a>
+            <a href="{%  url 'horario'%}">Horarios</a>
             <a href="{% url 'rutas'%}">Rutas</a>
             <a href="#Contacto">Contactos</a>
+            <a href="#Vehiculo">Mi vehiculo</a>
             </a>
             <div class="usuario">
                 <a class="fas fa-user" href="{% url 'register' %}"></a>

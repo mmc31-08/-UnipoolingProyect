@@ -18,6 +18,15 @@ def principal(request):
     return render(request, 'principal.html')
 
 
+def horario(request): 
+    context = {
+        "horarios" : User.objects.all()
+    }
+    return render(request, 'horario.html', context)
+
+
+
+
 def register(request):
     form = MyUserCreationForm()
     if request.method=='POST':

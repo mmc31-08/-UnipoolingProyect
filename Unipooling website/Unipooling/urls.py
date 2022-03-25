@@ -28,4 +28,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('rutas/', appViews.rutas, name="rutas"),
     path('registroRuta/', appViews.registrarRutaView, name="registroRuta"),
+    path('horario/', appViews.horario, name="horario"),
 ]
