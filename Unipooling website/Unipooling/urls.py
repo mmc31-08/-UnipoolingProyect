@@ -21,12 +21,12 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', appViews.home, name="home"),
-    path('principal/', appViews.principal, name="principal"),
+    path('', appViews.principal, name="principal"),
     path('register/', appViews.register, name="register"),
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('rutas/', appViews.rutas, name="rutas"),
     path('registroRuta/', appViews.registrarRutaView, name="registroRuta"),
     path('horario/', appViews.horario, name="horario"),
+    path('vehiculo/', appViews.vehiculo, name="vehiculo"),
 ]

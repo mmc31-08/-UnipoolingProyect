@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
 
 from .models import Ruta, User
-from .forms import RutaForm, MyUserCreationForm
+from .forms import RutaForm, MyUserCreationForm, vehiculoForm
 
 
 def home(request):
@@ -24,7 +24,35 @@ def horario(request):
     }
     return render(request, 'horario.html', context)
 
+def vehiculo(request, *args, **kwargs): 
+    if 'pk' in kwargs:
+        pk = kwargs['pk']
+        instance = get_object_or_404(vehiculo, id=pk)
+        if request.method == 'POST':
+            formr = vehiculoForm(request.POST, instance=instance)
+            if 'crear' in request.POST:
+                formr = vehiculoForm(request.POST)
+                if formr.is_valid():
+                    formr.save()
+                    return redirect('/vehiculo/') 
+                else:
+                    messages.error(request, formr.errors)
+        else:
+            formr = vehiculoForm(instance=instance)
+    elif request.method == 'POST':
+        if 'crear' in request.POST:
+            formr = vehiculoForm(request.POST)
+            if formr.is_valid():
+                formr.save()
+                return redirect('/vehiculo/') 
+            else:
+                messages.error(request, formr.errors)
+    else:
+        formr = vehiculoForm()
 
+    context = {'formr': formr, 'disabled': (kwargs.get('pk', None) != None), 'nombre_modelo': 'vehiculo'}
+
+    return render(request, 'vehiculoh.html', context) #cambia
 
 
 def register(request):
