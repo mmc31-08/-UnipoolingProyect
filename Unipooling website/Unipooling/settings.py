@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-q)13y3ws9li5y8h1pco8l_x%u3f&zhq-a&dk*95ij#=7b&j+o9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']                             
 
 
 # Application definition
@@ -110,11 +110,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LANGUAGE_CODE = 'es-CO'
+
+
+LANGUAGES = [
+    ('es-CO', 'Spanish'),
+    # ('en-US', 'English'),
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+TIME_ZON = 'America/Bogota'
 
 TIME_ZONE = 'UTC'
 
@@ -128,9 +135,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
-MEDIA_URL= 'Unipoolingapp/static/images/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'app/static'),)
+
 
 LOGIN_REDIRECT_URL= 'principal'
 
