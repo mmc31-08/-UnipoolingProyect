@@ -30,10 +30,10 @@
             <a href="{%  url 'horario'%}">Horarios</a>
             <a href="{% url 'rutas'%}">Rutas</a>
             <a href="#Contacto">Contactos</a>
-            <a href="#Vehiculo">Mi vehiculo</a>
+            <a href="{% url 'vehiculo'%}">Mi vehiculo</a>
             </a>
             <div class="usuario">
-                <a class="fas fa-user" href="{% url 'register' %}"></a>
+                <a class="fas fa-user" href="{% url 'login' %}"></a>
             </div>
         </div>
 

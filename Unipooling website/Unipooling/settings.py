@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'Unipooling', 
         'USER': 'postgres', 
-        'PASSWORD': 'mmunozc',
+        'PASSWORD': 'david1601',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }

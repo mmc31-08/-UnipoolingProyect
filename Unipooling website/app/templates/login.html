@@ -6,11 +6,21 @@
 <form class="form" method="post" action="">
 
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit">
-    <button type="submit" id="submit">login</button>
+    {% for field in form %}
+    <div class="from_group">
+        {{field.label}}
+        {{field}}
+    </div>
+    
+    {% endfor %}
+    <button type="submit" id="submit">Login</button>
     
 </form>
+<div class="link">
+    <p>No está registrado?<a href="{% url 'register' %}"> Registrate Aquí</a></p>
+    
+</div>
+
 </div>
 
 {% endblock %}
