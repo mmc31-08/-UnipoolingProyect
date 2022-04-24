@@ -25,8 +25,6 @@ def horario(request):
     return render(request, 'horario.html', context)
 
 
-
-
 def register(request):
     form = MyUserCreationForm()
     if request.method=='POST':

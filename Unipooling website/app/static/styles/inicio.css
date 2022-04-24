@@ -162,13 +162,3 @@ button#submit:hover {
 }
 
 
-.image_horario{
-  display: flex;
-  justify-content: center;
-}
-
-.image_horario img{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 60%;
-}
