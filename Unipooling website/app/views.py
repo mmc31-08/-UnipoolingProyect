@@ -1,12 +1,7 @@
 
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.db.models import Q
-from django.contrib.auth import authenticate, login, logout
-
-from .models import Ruta, User
+from .models import *
 from .forms import RutaForm, MyUserCreationForm, vehiculoForm
 
 
@@ -24,36 +19,25 @@ def horario(request):
     }
     return render(request, 'horario.html', context)
 
-def vehiculo(request, *args, **kwargs): 
-    if 'pk' in kwargs:
-        pk = kwargs['pk']
-        instance = get_object_or_404(vehiculo, id=pk)
+
+def vehiculo(request): 
         if request.method == 'POST':
-            formr = vehiculoForm(request.POST, instance=instance)
-            if 'crear' in request.POST:
-                formr = vehiculoForm(request.POST)
-                if formr.is_valid():
-                    formr.save()
-                    return redirect('/vehiculo/') 
-                else:
-                    messages.error(request, formr.errors)
-        else:
-            formr = vehiculoForm(instance=instance)
-    elif request.method == 'POST':
-        if 'crear' in request.POST:
             formr = vehiculoForm(request.POST)
             if formr.is_valid():
+                formr.instance.user = request.user
                 formr.save()
-                return redirect('/vehiculo/') 
+                messages.success(request, 'Se ha registrado tu vehiculo')
+                return redirect('principal') 
             else:
-                messages.error(request, formr.errors)
-    else:
-        formr = vehiculoForm()
+                messages.success(request, 'Verifica tus datos')
+        else:
+            formr =vehiculoForm()
 
-    context = {'formr': formr, 'disabled': (kwargs.get('pk', None) != None), 'nombre_modelo': 'vehiculo'}
+        return render(request, 'vehiculoh.html', context={"formr": formr}) #cambia
 
-    return render(request, 'vehiculoh.html', context) #cambia
 
+def datos(request):
+    return render(request, 'datos.html')
 
 def register(request):
     form = MyUserCreationForm()
@@ -103,4 +87,9 @@ def registrarRutaView(request, *args, **kwargs):
 
     context = {'formr': formr, 'disabled': (kwargs.get('pk', None) != None), 'nombre_modelo': 'Ruta'}
 
-    return render(request, 'registrarRuta.html', context) #cambia
+    return render(request, 'registrarRuta.html', context) 
+
+def datosVehiculo(request):
+    logged_in_user_vehiculo = Vehiculo.objects.filter(user_id=8)
+    return render(request, 'datosVehiculo.html', {'vehiculo': logged_in_user_vehiculo})
+ 

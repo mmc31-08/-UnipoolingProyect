@@ -1,15 +1,18 @@
 /* Add a black background color to the top navigation */
+html{
+  height: 100%;
+}
 
 body {
   overflow: hidden;
   justify-content: center;
   background-color: #0b3c7c;
   margin: 0px;
-overflow: hidden;
-justify-content: center;
-background-color:#0b3c7c;
-margin: 0px;
-padding-bottom: 100px;
+  overflow: hidden;
+  justify-content: center;
+  background-color:#0b3c7c;
+  margin: 0px;
+  padding-bottom: 100px;
 
 }
 
@@ -40,7 +43,6 @@ html{
   overflow-x: hidden;
   scroll-padding-top: 5.5rem;
   scroll-behavior: smooth;
-  height: 100%;
 }
 
 ::-webkit-scrollbar{
@@ -102,7 +104,7 @@ button#submit:hover {
 }
 
 .link a{
-  color: #b867b8;
+  color: #ff0000;
 }
 
 .notification {
@@ -167,5 +169,6 @@ button#submit:hover {
   background: #568cd1;
   transition: 1.5s;
 }
+
 
 

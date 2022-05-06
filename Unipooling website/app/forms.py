@@ -10,7 +10,7 @@ from django import forms
 class MyUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ['username', 'email', 'password1', 'password2', 'universidad', 'horario']
+        fields = ['username', 'email', 'password1', 'password2', 'universidad', 'horario', 'celular']
 
 
 class UserForm(ModelForm):
@@ -35,10 +35,16 @@ class RutaForm(ModelForm):
 class vehiculoForm(ModelForm):
     class Meta:
         model= Vehiculo
-        fields= '__all__'
+        fields= ['placa', 'color', 'modelo' ]
 
         widgets = {
             'placa': forms.TextInput(attrs={'class': 'form-control'}),
             'color': forms.TextInput(attrs={'class': 'form-control'}),
             'modelo': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+
+
+
+
+        
