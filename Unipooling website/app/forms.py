@@ -16,7 +16,7 @@ class MyUserCreationForm(UserCreationForm):
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ['name', 'username', 'email', ]
+        fields = ['name', 'username', 'email']
 
 
 class RutaForm(ModelForm):
