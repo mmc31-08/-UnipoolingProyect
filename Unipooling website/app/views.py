@@ -1,4 +1,5 @@
 
+from contextlib import ContextDecorator
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from .models import *
@@ -33,7 +34,7 @@ def vehiculo(request):
         else:
             formr =vehiculoForm()
 
-        return render(request, 'vehiculoh.html', context={"formr": formr}) #cambia
+        return render(request, 'vehiculoh.html', context={"formr": formr}) 
 
 
 def datos(request):
@@ -92,4 +93,8 @@ def registrarRutaView(request, *args, **kwargs):
 def datosVehiculo(request):
     logged_in_user_vehiculo = Vehiculo.objects.filter(user_id=8)
     return render(request, 'datosVehiculo.html', {'vehiculo': logged_in_user_vehiculo})
- 
+
+def contacto(request, pk):
+    instance = get_object_or_404(Ruta, id=pk)
+    context={'contacto': instance}
+    return render(request,'contacto.html', context) 

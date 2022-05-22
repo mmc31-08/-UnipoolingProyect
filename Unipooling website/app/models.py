@@ -19,6 +19,10 @@ class Ruta(models.Model):
     lugarLlegada = models.CharField(max_length=200)
     ruta = models.CharField(max_length=200)
     fechaSalida = models.DateTimeField(auto_now=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=True)
+
+    def __str__(self):
+        return self.user
 
 class Vehiculo(models.Model):
     placa = models.CharField(max_length=6, validators=[MinLengthValidator(6)],blank=False, null=False, unique=True)
