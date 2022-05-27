@@ -77,8 +77,8 @@ def registrarRutaView(request, *args, **kwargs):
 
     return render(request, 'registrarRuta.html',context ) 
 
-def datosVehiculo(request):
-    logged_in_user_vehiculo = Vehiculo.objects.filter(user_id=1)
+def datosVehiculo(request, pk):
+    logged_in_user_vehiculo = Vehiculo.objects.filter(user_id=pk)
     return render(request, 'datosVehiculo.html', {'vehiculo': logged_in_user_vehiculo})
 
 def contacto(request, pk):
