@@ -11,7 +11,7 @@ class User(AbstractUser):
     celular= models.CharField(max_length=10, unique=True, null=True)
 
     USERNAME_FIELD= 'email'
-    REQUIRED_FIELDS=['universidad', 'horario']
+    REQUIRED_FIELDS=['universidad', 'horario', 'username']
 
 
 class Ruta(models.Model):
@@ -22,7 +22,8 @@ class Ruta(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=True)
 
     def __str__(self):
-        return self.user
+        return self.ruta
+
 
 class Vehiculo(models.Model):
     placa = models.CharField(max_length=6, validators=[MinLengthValidator(6)],blank=False, null=False, unique=True)

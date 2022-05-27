@@ -23,9 +23,10 @@
                     <td>{{ruta.lugarLlegada}}</td>
                     <td>{{ruta.ruta}}</td>
                     <td>{{ruta.fechaSalida}}</td>
-                    <td> <a href = "{% url "contacto" pk=Ruta.id %}" class="btn btn-success">Contacto</button> </td>
-                    {%endfor%}
-                    {%endif%}
+                    <td> <a href = "{% url "contacto" pk=ruta.id %}" class="btn btn-success">Contacto</button> </td>
+                <tr>
+                {%endfor%}
+                {%endif%}
             </tbody>
         </table>
 		<br>

@@ -23,7 +23,7 @@ class RutaForm(ModelForm):
     class Meta:
         model = Ruta
 
-        fields = '__all__'
+        fields =['lugarSalida', 'lugarLlegada', 'ruta', 'fechaSalida' ]
 
         widgets = {
             'lugarSalida': forms.TextInput(attrs={'class': 'form-control'}),

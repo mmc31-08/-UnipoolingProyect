@@ -55,46 +55,33 @@ def register(request):
     return render(request,'register.html', { 'form' : form})
 
 def rutas(request):
-    ruta = Ruta.objects.all()
-    context = {'rutas': ruta}
+    Rutas = Ruta.objects.all()
+    context = {'rutas': Rutas}
     return render(request, 'ruta.html', context)
 
 
 def registrarRutaView(request, *args, **kwargs):
-    if 'pk' in kwargs:
-        pk = kwargs['pk']
-        instance = get_object_or_404(Ruta, id=pk)
-        if request.method == 'POST':
-            formr = RutaForm(request.POST, instance=instance)
-            if 'crear' in request.POST:
-                formr = RutaForm(request.POST)
-                if formr.is_valid():
-                    formr.save()
-                    return redirect('/rutas/') 
-                else:
-                    messages.error(request, formr.errors)
+    if request.method == 'POST':
+        formr = RutaForm(request.POST)
+        if formr.is_valid():
+            formr.instance.user = request.user
+            formr.save()
+            messages.success(request, 'Se ha registrado tu vehiculo')
+            return redirect('principal') 
         else:
-            formr = RutaForm(instance=instance)
-    elif request.method == 'POST':
-        if 'crear' in request.POST:
-            formr = RutaForm(request.POST)
-            if formr.is_valid():
-                formr.save()
-                return redirect('/rutas/') 
-            else:
-                messages.error(request, formr.errors)
+            messages.success(request, 'Verifica tus datos')
     else:
-        formr = RutaForm()
+        formr =RutaForm()
 
-    context = {'formr': formr, 'disabled': (kwargs.get('pk', None) != None), 'nombre_modelo': 'Ruta'}
+    context = {'formr': formr, 'disabled': (kwargs.get('pk', None) != None)}
 
-    return render(request, 'registrarRuta.html', context) 
+    return render(request, 'registrarRuta.html',context ) 
 
 def datosVehiculo(request):
-    logged_in_user_vehiculo = Vehiculo.objects.filter(user_id=8)
+    logged_in_user_vehiculo = Vehiculo.objects.filter(user_id=1)
     return render(request, 'datosVehiculo.html', {'vehiculo': logged_in_user_vehiculo})
 
 def contacto(request, pk):
     instance = get_object_or_404(Ruta, id=pk)
-    context={'contacto': instance}
+    context={'Creador': instance}
     return render(request,'contacto.html', context) 

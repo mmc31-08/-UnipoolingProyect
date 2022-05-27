@@ -16,5 +16,5 @@ urlpatterns = [
     path('vehiculo/', appViews.vehiculo, name="vehiculo"),
     path('datos/', appViews.datos, name="cuenta"),
     path('datosVehiculo/', appViews.datosVehiculo, name="Datos Vehiculo"),
-    path('contacto/<pk>/', appViews.contacto, name="contacto")
+    path('contacto/<pk>/', appViews.contacto, name="contacto"),
 ]
